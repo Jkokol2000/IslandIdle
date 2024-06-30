@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnj1cfiyshdkp"]
+
+[ext_resource type="Script" path="res://UI.gd" id="1_crfra"]
+[ext_resource type="Resource" uid="uid://cqxp4oi4wuscv" path="res://Resources/Materials/Food.tres" id="2_xmgtp"]
+[ext_resource type="Resource" uid="uid://t5xfnparaeqg" path="res://Resources/Materials/Water.tres" id="3_lu60b"]
+[ext_resource type="Resource" uid="uid://dh0g70vbch5gk" path="res://Resources/Materials/Wood.tres" id="4_fyt7e"]
+[ext_resource type="Texture2D" uid="uid://dcrcijo1488y0" path="res://Sprites/ico_wood.png" id="5_mmfmq"]
+[ext_resource type="FontFile" uid="uid://b04qf4cmcshqx" path="res://Fonts/C&C Red Alert [INET].ttf" id="6_e61fl"]
+[ext_resource type="Texture2D" uid="uid://dkult2g8ahd6d" path="res://Sprites/ico_fish.png" id="6_ll3ro"]
+[ext_resource type="Texture2D" uid="uid://urksclppoboh" path="res://Sprites/ico_water.png" id="7_ewk47"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_crfra")
+Resources = [ExtResource("2_xmgtp"), ExtResource("3_lu60b"), ExtResource("4_fyt7e")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.5
+offset_right = 80.5
+offset_bottom = 27.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(85, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_mmfmq")
+expand_mode = 3
+
+[node name="WoodLabel" type="Label" parent="Control/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_e61fl")
+theme_override_font_sizes/font_size = 26
+text = "10
+"
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_ll3ro")
+expand_mode = 3
+
+[node name="FoodLabel" type="Label" parent="Control/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_e61fl")
+theme_override_font_sizes/font_size = 26
+text = "10
+"
+
+[node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_ewk47")
+expand_mode = 3
+
+[node name="WaterLabel" type="Label" parent="Control/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_e61fl")
+theme_override_font_sizes/font_size = 26
+text = "10
+"

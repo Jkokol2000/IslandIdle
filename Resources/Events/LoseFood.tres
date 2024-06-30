@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Event" load_steps=3 format=3 uid="uid://4hv53f60nsoa"]
+
+[ext_resource type="Script" path="res://Resources/Base Resources/EventResource.gd" id="1_e4ht0"]
+[ext_resource type="Resource" uid="uid://cqxp4oi4wuscv" path="res://Resources/Materials/Food.tres" id="1_pkodb"]
+
+[resource]
+script = ExtResource("1_e4ht0")
+name = "Spoiled Rotten"
+description = "You left some fish out without preserving it. You're not gonna forget that smell...
+-Food"
+effect = {
+ExtResource("1_pkodb"): -25
+}

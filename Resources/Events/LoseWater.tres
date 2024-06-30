@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Event" load_steps=3 format=3 uid="uid://buu0ihwbpogtp"]
+
+[ext_resource type="Resource" uid="uid://t5xfnparaeqg" path="res://Resources/Materials/Water.tres" id="1_r8y0p"]
+[ext_resource type="Script" path="res://Resources/Base Resources/EventResource.gd" id="2_053co"]
+
+[resource]
+script = ExtResource("2_053co")
+name = "Crying over Spilt Water"
+description = "You accidently dump a bucket of water off the edge of the island! 
+-Water"
+effect = {
+ExtResource("1_r8y0p"): -25
+}

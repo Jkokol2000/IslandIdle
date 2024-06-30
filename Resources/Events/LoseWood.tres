@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Event" load_steps=3 format=3 uid="uid://bj3glma7spvg1"]
+
+[ext_resource type="Script" path="res://Resources/Base Resources/EventResource.gd" id="1_projy"]
+[ext_resource type="Resource" uid="uid://dh0g70vbch5gk" path="res://Resources/Materials/Wood.tres" id="1_v12tr"]
+
+[resource]
+script = ExtResource("1_projy")
+name = "Locust Attack!"
+description = "Some hungry insects ate your defenseless trees!
+-Wood"
+effect = {
+ExtResource("1_v12tr"): -25
+}

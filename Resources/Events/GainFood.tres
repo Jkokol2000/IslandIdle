@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Event" load_steps=3 format=3 uid="uid://biannpfkb5jl0"]
+
+[ext_resource type="Resource" uid="uid://cqxp4oi4wuscv" path="res://Resources/Materials/Food.tres" id="1_lkemu"]
+[ext_resource type="Script" path="res://Resources/Base Resources/EventResource.gd" id="1_yg16f"]
+
+[resource]
+script = ExtResource("1_yg16f")
+name = "King of the Ocean"
+description = "You reeled in a massive fish!
++Food"
+effect = {
+ExtResource("1_lkemu"): 50
+}

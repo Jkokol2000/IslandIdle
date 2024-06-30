@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Event" load_steps=5 format=3 uid="uid://d0xutmocqjfwe"]
+
+[ext_resource type="Script" path="res://Resources/Base Resources/EventResource.gd" id="1_6f4t0"]
+[ext_resource type="Resource" uid="uid://t5xfnparaeqg" path="res://Resources/Materials/Water.tres" id="1_nyu6v"]
+[ext_resource type="Resource" uid="uid://cqxp4oi4wuscv" path="res://Resources/Materials/Food.tres" id="2_vqid0"]
+[ext_resource type="Resource" uid="uid://dh0g70vbch5gk" path="res://Resources/Materials/Wood.tres" id="3_j1y8m"]
+
+[resource]
+script = ExtResource("1_6f4t0")
+name = "Luck of the Gods"
+description = "A blessing of great luck upon you!
++Water, Wood, and Food!"
+effect = {
+ExtResource("1_nyu6v"): 100,
+ExtResource("2_vqid0"): 100,
+ExtResource("3_j1y8m"): 100
+}

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Event" load_steps=2 format=3 uid="uid://dcfnvsp8axrin"]
+
+[ext_resource type="Script" path="res://Resources/Base Resources/EventResource.gd" id="1_yq7oh"]
+
+[resource]
+script = ExtResource("1_yq7oh")
+name = "Bountiful Harvest"
+description = "Your diligent planting efforts bore...well, wood!
++Wood"
+effect = {}

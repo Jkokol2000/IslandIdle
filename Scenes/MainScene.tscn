@@ -1,0 +1,284 @@
+[gd_scene load_steps=26 format=3 uid="uid://cxpqkjafl05i7"]
+
+[ext_resource type="Texture2D" uid="uid://cwpanvkvu3nca" path="res://Sprites/frame_0_delay-0.1s.png" id="1_fg3si"]
+[ext_resource type="Script" path="res://Scripts/MainScene.gd" id="1_vmycd"]
+[ext_resource type="Script" path="res://Scripts/PlayerBody.gd" id="2_rg75m"]
+[ext_resource type="Texture2D" uid="uid://cn4xuha02ih1o" path="res://Sprites/player1.png" id="4_7vhvm"]
+[ext_resource type="Resource" uid="uid://dh0g70vbch5gk" path="res://Resources/Materials/Wood.tres" id="7_t5hbh"]
+[ext_resource type="Resource" uid="uid://cqxp4oi4wuscv" path="res://Resources/Materials/Food.tres" id="8_fqkxl"]
+[ext_resource type="Resource" uid="uid://t5xfnparaeqg" path="res://Resources/Materials/Water.tres" id="9_73wju"]
+[ext_resource type="PackedScene" uid="uid://dbs3cy45tjss3" path="res://resource_gather.tscn" id="12_dj5j2"]
+[ext_resource type="Script" path="res://Scripts/WoodButton.gd" id="12_seq22"]
+[ext_resource type="Script" path="res://Scripts/BuildingLabel.gd" id="13_a0gly"]
+[ext_resource type="Resource" uid="uid://d0xutmocqjfwe" path="res://Resources/Events/GainAll.tres" id="14_wg3lk"]
+[ext_resource type="Script" path="res://Scripts/TimeTracker.gd" id="15_e5h7y"]
+[ext_resource type="Resource" uid="uid://biannpfkb5jl0" path="res://Resources/Events/GainFood.tres" id="15_xsfwk"]
+[ext_resource type="Resource" uid="uid://c5n3dnl0iokvw" path="res://Resources/Events/GainWater.tres" id="16_llspu"]
+[ext_resource type="PackedScene" uid="uid://b4tktq3x8y0rw" path="res://Sprites/ProtoTimeTracker.aseprite" id="16_v2nx6"]
+[ext_resource type="Resource" uid="uid://dcfnvsp8axrin" path="res://Resources/Events/GainWood.tres" id="17_2cvb7"]
+[ext_resource type="Script" path="res://Scenes/ColorRect.gd" id="18_fk3q0"]
+[ext_resource type="Resource" uid="uid://bq7d8llap00yj" path="res://Resources/Events/LoseAll.tres" id="18_tm2rv"]
+[ext_resource type="Resource" uid="uid://4hv53f60nsoa" path="res://Resources/Events/LoseFood.tres" id="19_vw4pw"]
+[ext_resource type="Resource" uid="uid://buu0ihwbpogtp" path="res://Resources/Events/LoseWater.tres" id="20_fy6me"]
+[ext_resource type="PackedScene" uid="uid://dnj1cfiyshdkp" path="res://ui.tscn" id="21_sib0t"]
+[ext_resource type="Resource" uid="uid://bj3glma7spvg1" path="res://Resources/Events/LoseWood.tres" id="21_vx87e"]
+[ext_resource type="Script" path="res://Scenes/ClickUpgradeButton.gd" id="23_ys3nv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qto5b"]
+size = Vector2(68, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcuyt"]
+size = Vector2(31.5, 694.5)
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_vmycd")
+
+[node name="UI" parent="." instance=ExtResource("21_sib0t")]
+
+[node name="IslandBody" type="StaticBody2D" parent="."]
+
+[node name="IslandCollision" type="CollisionShape2D" parent="IslandBody"]
+
+[node name="IslandSprite" type="Sprite2D" parent="IslandBody"]
+texture_filter = 1
+position = Vector2(984, 497)
+scale = Vector2(2, 2)
+texture = ExtResource("1_fg3si")
+
+[node name="PlayerBody" type="CharacterBody2D" parent="."]
+position = Vector2(969, 439)
+script = ExtResource("2_rg75m")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_qto5b")
+
+[node name="PlayerSprite" type="Sprite2D" parent="PlayerBody"]
+texture = ExtResource("4_7vhvm")
+
+[node name="Timer" type="Timer" parent="PlayerBody"]
+wait_time = 0.5
+autostart = true
+
+[node name="Wall Detect" type="RayCast2D" parent="PlayerBody"]
+target_position = Vector2(50, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="WoodButton" type="Button" parent="." node_paths=PackedStringArray("upgrade_cost_display")]
+offset_left = 1091.0
+offset_top = 341.0
+offset_right = 1245.0
+offset_bottom = 372.0
+text = "Buy Wood Building"
+script = ExtResource("12_seq22")
+BuildingResource = ExtResource("7_t5hbh")
+buildingCost = {
+ExtResource("9_73wju"): 5
+}
+upgrade_cost_display = NodePath("BuildingLabel")
+
+[node name="BuildingLabel" type="Label" parent="WoodButton"]
+visible = false
+layout_mode = 2
+offset_left = -30.0
+offset_top = 66.0
+offset_right = 10.0
+offset_bottom = 89.0
+text = "Test"
+script = ExtResource("13_a0gly")
+
+[node name="FoodButton" type="Button" parent="." node_paths=PackedStringArray("upgrade_cost_display")]
+offset_left = 677.0
+offset_top = 661.0
+offset_right = 831.0
+offset_bottom = 692.0
+text = "Buy Food Building"
+script = ExtResource("12_seq22")
+BuildingResource = ExtResource("8_fqkxl")
+buildingCost = {
+ExtResource("7_t5hbh"): 5
+}
+upgrade_cost_display = NodePath("BuildingLabel")
+
+[node name="BuildingLabel" type="Label" parent="FoodButton"]
+visible = false
+layout_mode = 0
+offset_left = 63.0
+offset_top = -64.0
+offset_right = 103.0
+offset_bottom = -41.0
+text = "Test"
+script = ExtResource("13_a0gly")
+
+[node name="WaterButton" type="Button" parent="." node_paths=PackedStringArray("upgrade_cost_display")]
+offset_left = 677.0
+offset_top = 325.0
+offset_right = 833.0
+offset_bottom = 356.0
+text = "Buy Water Building"
+script = ExtResource("12_seq22")
+BuildingResource = ExtResource("9_73wju")
+buildingCost = {
+ExtResource("8_fqkxl"): 5
+}
+upgrade_cost_display = NodePath("BuildingLabel")
+
+[node name="BuildingLabel" type="Label" parent="WaterButton"]
+visible = false
+layout_mode = 0
+offset_left = 39.0
+offset_top = 199.0
+offset_right = 79.0
+offset_bottom = 222.0
+text = "Test"
+script = ExtResource("13_a0gly")
+
+[node name="Top_Wall" type="Area2D" parent="."]
+position = Vector2(752, 201)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Scrap_Shape" type="CollisionShape2D" parent="Top_Wall"]
+position = Vector2(226, -110)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_rcuyt")
+
+[node name="Bottom_Wall" type="Area2D" parent="."]
+position = Vector2(991, 783)
+rotation = -1.5708
+scale = Vector2(1.19855, 1.0534)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Scrap_Shape" type="CollisionShape2D" parent="Bottom_Wall"]
+shape = SubResource("RectangleShape2D_rcuyt")
+
+[node name="Right_Wall" type="Area2D" parent="."]
+position = Vector2(1358, 451)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Scrap_Shape" type="CollisionShape2D" parent="Right_Wall"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_rcuyt")
+
+[node name="Left_Wall" type="Area2D" parent="."]
+position = Vector2(414, 450)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Scrap_Shape" type="CollisionShape2D" parent="Left_Wall"]
+position = Vector2(196.5, 2.5)
+shape = SubResource("RectangleShape2D_rcuyt")
+
+[node name="WoodGather" parent="." instance=ExtResource("12_dj5j2")]
+upgradeCost = {
+ExtResource("8_fqkxl"): 5,
+ExtResource("9_73wju"): 5
+}
+
+[node name="WaterGather" parent="." instance=ExtResource("12_dj5j2")]
+offset_left = 685.0
+offset_top = 140.0
+offset_right = 821.0
+offset_bottom = 322.0
+text = "Gather Water"
+GatherMaterial = ExtResource("9_73wju")
+upgradeCost = {
+ExtResource("7_t5hbh"): 10
+}
+
+[node name="FoodGather" parent="." instance=ExtResource("12_dj5j2")]
+offset_left = 688.0
+offset_top = 477.0
+offset_right = 824.0
+offset_bottom = 659.0
+text = "Gather Food"
+GatherMaterial = ExtResource("8_fqkxl")
+upgradeCost = {
+ExtResource("7_t5hbh"): 10
+}
+
+[node name="TimeTracker" type="Node2D" parent="."]
+script = ExtResource("15_e5h7y")
+FoodResource = ExtResource("8_fqkxl")
+WaterResource = ExtResource("9_73wju")
+EventList = [ExtResource("14_wg3lk"), ExtResource("15_xsfwk"), ExtResource("16_llspu"), ExtResource("17_2cvb7"), ExtResource("18_tm2rv"), ExtResource("19_vw4pw"), ExtResource("20_fy6me"), ExtResource("21_vx87e")]
+
+[node name="ProtoTimeTracker" parent="TimeTracker" instance=ExtResource("16_v2nx6")]
+position = Vector2(1544, 91)
+
+[node name="TimeLength" type="Timer" parent="TimeTracker"]
+wait_time = 5.0
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="TimeTracker"]
+process_mode = 3
+visible = false
+offset_left = 605.0
+offset_top = 226.0
+offset_right = 645.0
+offset_bottom = 266.0
+scale = Vector2(18.7006, 10.0335)
+script = ExtResource("18_fk3q0")
+
+[node name="Label" type="Label" parent="TimeTracker/ColorRect"]
+layout_mode = 0
+offset_left = 10.5879
+offset_top = -0.298997
+offset_right = 57.5879
+offset_bottom = 38.701
+scale = Vector2(0.225364, 0.258333)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Test"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TimeTracker/ColorRect"]
+layout_mode = 0
+offset_left = 14.9193
+offset_top = 19.2355
+offset_right = 98.9193
+offset_bottom = 59.2355
+scale = Vector2(0.0629788, 0.105073)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 11
+text = "This is Test Text"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Button" type="Button" parent="TimeTracker/ColorRect"]
+layout_mode = 0
+offset_left = 14.0102
+offset_top = 30.8964
+offset_right = 62.0102
+offset_bottom = 61.8964
+scale = Vector2(0.179309, 0.269256)
+text = "Okay"
+
+[node name="ClickUpgradeButton" type="Button" parent="."]
+offset_left = 1109.0
+offset_top = 557.0
+offset_right = 1232.0
+offset_bottom = 588.0
+text = "Upgrade Clicks"
+script = ExtResource("23_ys3nv")
+resources = [ExtResource("8_fqkxl"), ExtResource("9_73wju"), ExtResource("7_t5hbh")]
+
+[connection signal="timeout" from="PlayerBody/Timer" to="PlayerBody" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="WoodButton" to="WoodButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WoodButton" to="WoodButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="WoodButton" to="WoodButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="FoodButton" to="FoodButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="FoodButton" to="FoodButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="FoodButton" to="FoodButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="WaterButton" to="WaterButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WaterButton" to="WaterButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="WaterButton" to="WaterButton" method="_on_pressed"]
+[connection signal="timeout" from="TimeTracker/TimeLength" to="TimeTracker" method="_on_time_length_timeout"]
+[connection signal="pressed" from="TimeTracker/ColorRect/Button" to="TimeTracker" method="_on_button_pressed"]
+[connection signal="pressed" from="ClickUpgradeButton" to="ClickUpgradeButton" method="_on_pressed"]
+[connection signal="successful_upgrade" from="ClickUpgradeButton" to="WoodGather" method="_on_click_upgrade_button_successful_upgrade"]
+[connection signal="successful_upgrade" from="ClickUpgradeButton" to="WaterGather" method="_on_click_upgrade_button_successful_upgrade"]
+[connection signal="successful_upgrade" from="ClickUpgradeButton" to="FoodGather" method="_on_click_upgrade_button_successful_upgrade"]

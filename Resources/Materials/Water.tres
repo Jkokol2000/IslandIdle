@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MaterialResource" load_steps=2 format=3 uid="uid://t5xfnparaeqg"]
+
+[ext_resource type="Script" path="res://Resources/Base Resources/MaterialResource.gd" id="1_0wy52"]
+
+[resource]
+script = ExtResource("1_0wy52")
+name = "Water"

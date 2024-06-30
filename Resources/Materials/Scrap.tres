@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MaterialResource" load_steps=2 format=3 uid="uid://6hbao7tfwq6r"]
+
+[ext_resource type="Script" path="res://Resources/Base Resources/MaterialResource.gd" id="1_ybghp"]
+
+[resource]
+script = ExtResource("1_ybghp")
+name = "Scrap"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Event" load_steps=5 format=3 uid="uid://bq7d8llap00yj"]
+
+[ext_resource type="Resource" uid="uid://cqxp4oi4wuscv" path="res://Resources/Materials/Food.tres" id="1_btgqm"]
+[ext_resource type="Script" path="res://Resources/Base Resources/EventResource.gd" id="1_sxyij"]
+[ext_resource type="Resource" uid="uid://t5xfnparaeqg" path="res://Resources/Materials/Water.tres" id="2_hmk8m"]
+[ext_resource type="Resource" uid="uid://dh0g70vbch5gk" path="res://Resources/Materials/Wood.tres" id="3_kk2qp"]
+
+[resource]
+script = ExtResource("1_sxyij")
+name = "A Horrible Storm!"
+description = "Lightning struck the island! You're find, but you lost a lot of resources
+-Water, Food, and Wood"
+effect = {
+ExtResource("1_btgqm"): -50,
+ExtResource("2_hmk8m"): -50,
+ExtResource("3_kk2qp"): -50
+}

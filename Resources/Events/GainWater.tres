@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Event" load_steps=3 format=3 uid="uid://c5n3dnl0iokvw"]
+
+[ext_resource type="Script" path="res://Resources/Base Resources/EventResource.gd" id="1_3lv8k"]
+[ext_resource type="Resource" uid="uid://t5xfnparaeqg" path="res://Resources/Materials/Water.tres" id="1_rsl8a"]
+
+[resource]
+script = ExtResource("1_3lv8k")
+name = "Free Water!"
+description = "Who knew it rained this high up...
++Water"
+effect = {
+ExtResource("1_rsl8a"): 50
+}
