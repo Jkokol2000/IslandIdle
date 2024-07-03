@@ -30,6 +30,4 @@ func show_upgrade_cost():
 	if MaterialComp != null:
 		for key in MaterialComp.upgradeCost:
 			upgrade_text += key.name + ": " + str(MaterialComp.upgradeCost[key]) + "\n"
-	else:
-		print("error")
 		

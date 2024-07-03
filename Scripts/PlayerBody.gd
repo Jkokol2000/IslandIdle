@@ -5,7 +5,7 @@ enum {
 	MOVE
 }
 # Default Move Speed for Player Sprite
-var SPEED: float = 100.0
+var SPEED: float = 50.0
 var current_state = IDLE
 var dir = Vector2.RIGHT
 var start_pos
@@ -21,10 +21,16 @@ func _process(delta):
 	if is_roaming:
 		match current_state:
 			IDLE:
-				pass
+				$AnimatedSprite2D.play("Idle")
 			NEW_DIR:
+				$AnimatedSprite2D.play("Idle")
 				dir = choose([Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN, Vector2.ZERO]) + choose([Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN, Vector2.ZERO])
 			MOVE:
+				$AnimatedSprite2D.play("Walking")
+				if dir.x < 0 and $AnimatedSprite2D.flip_h == false:
+					$AnimatedSprite2D.flip_h = true
+				elif dir.x > 0 and $AnimatedSprite2D.flip_h == true:
+					$AnimatedSprite2D.flip_h = false
 				move(delta)
 	if ray.is_colliding():
 		current_state = NEW_DIR

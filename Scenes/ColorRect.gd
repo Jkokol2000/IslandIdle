@@ -9,5 +9,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Label.text = event_name
-	$RichTextLabel.text = event_effect
+	$VBoxContainer/Label.text = event_name
+	$VBoxContainer/RichTextLabel.text = event_effect

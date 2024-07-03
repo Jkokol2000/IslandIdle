@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqm3w53s2ya3k"]
+
+[ext_resource type="FontFile" uid="uid://b04qf4cmcshqx" path="res://Fonts/C&C Red Alert [INET].ttf" id="1_qar4h"]
+[ext_resource type="Script" path="res://GameEndScreen.gd" id="1_tfrnb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_one3p"]
+bg_color = Color(0.62, 0.61597, 0.5394, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.492436, 0.856346, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_tfrnb")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_one3p")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 196
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qar4h")
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_qar4h")
+theme_override_font_sizes/font_size = 128
+text = "You ran out of resources"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qar4h")
+theme_override_font_sizes/font_size = 81
+text = "Score: 500000     High Score: 1000000"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_qar4h")
+theme_override_font_sizes/font_size = 128
+text = "Try Again?"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

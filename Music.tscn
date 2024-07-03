@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://x4mtwaqxgirc"]
+
+[ext_resource type="AudioStream" uid="uid://bt2itufpjwpmb" path="res://Resources/Materials/Boston Nova.mp3" id="1_jx5ka"]
+[ext_resource type="Script" path="res://BostonNova.gd" id="2_piiwn"]
+[ext_resource type="AudioStream" uid="uid://1i1yljy1gtjp" path="res://Resources/Materials/AUtumn leaves equalized (1).mp3" id="3_5jesc"]
+[ext_resource type="Script" path="res://AutumnLeaves.gd" id="4_5g45c"]
+[ext_resource type="AudioStream" uid="uid://bvhof7067rjdb" path="res://Resources/Materials/Solo piano.mp3" id="5_gqxyj"]
+[ext_resource type="Script" path="res://Piano.gd" id="6_s8d43"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BostonNova" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_jx5ka")
+volume_db = -7.0
+autoplay = true
+script = ExtResource("2_piiwn")
+
+[node name="AutumnLeaves" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5jesc")
+volume_db = -7.0
+script = ExtResource("4_5g45c")
+
+[node name="Piano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gqxyj")
+volume_db = -7.0
+script = ExtResource("6_s8d43")
+
+[connection signal="finished" from="BostonNova" to="AutumnLeaves" method="_on_boston_nova_finished"]
+[connection signal="finished" from="AutumnLeaves" to="Piano" method="_on_autumn_leaves_finished"]
+[connection signal="finished" from="Piano" to="BostonNova" method="_on_piano_finished"]

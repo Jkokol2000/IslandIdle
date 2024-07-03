@@ -20,5 +20,5 @@ func _on_pressed():
 			resource.currentAmount -= upgrade_cost
 		else:
 			return
-	upgrade_cost *= 5
+	upgrade_cost *= 3
 	emit_signal("successful_upgrade")

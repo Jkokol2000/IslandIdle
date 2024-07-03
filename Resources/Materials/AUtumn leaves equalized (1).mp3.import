@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1i1yljy1gtjp"
+path="res://.godot/imported/AUtumn leaves equalized (1).mp3-2b27d1577fafb78b70b48d2232193264.mp3str"
+
+[deps]
+
+source_file="res://Resources/Materials/AUtumn leaves equalized (1).mp3"
+dest_files=["res://.godot/imported/AUtumn leaves equalized (1).mp3-2b27d1577fafb78b70b48d2232193264.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,9 +1,12 @@
 extends Button
 
+@onready var Sound = $Upgrade_Sound
+
 @export var BuildingResource: MaterialResource
 @export var buildingCost: Dictionary
 @export var upgrade_cost_display: Label
 
+signal start_timer
 var upgrade_string = ""
 
 # Called when the node enters the scene tree for the first time.
@@ -18,24 +21,23 @@ func _process(delta):
 		
 
 func _on_pressed():
+	if BuildingResource.numberOfBuildings > 0:
+		emit_signal("start_timer")
 	if buildingCost != null:
-		print(buildingCost)
 		for key in buildingCost:
-			print(key)
 			if key.currentAmount < buildingCost[key]:
-				print("Not enough materials")
 				return
 			else:
 				key.currentAmount -= buildingCost[key]
+				Sound.play()
 		BuildingResource.numberOfBuildings += 1
 		increase_cost()
 	else:
-		print("no building cost")
+		pass
 
 func increase_cost():
 	for key in buildingCost:
-		buildingCost[key] *= 2
-		print(buildingCost[key])
+		buildingCost[key] =  int(buildingCost[key] * 3)
 	if upgrade_cost_display.visible:
 		upgrade_string = ""
 		display_cost()

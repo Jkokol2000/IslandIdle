@@ -1,0 +1,188 @@
+[gd_scene load_steps=38 format=3 uid="uid://8dukulqe7hgj"]
+
+[ext_resource type="Texture2D" uid="uid://cb641kfup8ff0" path="res://Sprites/TreeFarmAnimation/TreeFarmEmpty/frame_0_delay-0.1s.png" id="1_l3sh8"]
+[ext_resource type="Script" path="res://building_tracker.gd" id="1_ng4ed"]
+[ext_resource type="Texture2D" uid="uid://brrx56uohij5l" path="res://Sprites/FisheryAnimation/frame_0_delay-0.1s.png" id="2_84c1i"]
+[ext_resource type="Texture2D" uid="uid://dla3blrqv71lk" path="res://Sprites/TreeFarmAnimation/TreeFarmEmpty/frame_1_delay-0.1s.png" id="2_537uw"]
+[ext_resource type="Texture2D" uid="uid://bnpvkj544x7ou" path="res://Sprites/TreeFarmAnimation/TreeFarmEmpty/frame_2_delay-0.1s.png" id="3_efupy"]
+[ext_resource type="Texture2D" uid="uid://68b44nj4jsdt" path="res://Sprites/FisheryAnimation/frame_1_delay-0.1s.png" id="3_iproh"]
+[ext_resource type="Texture2D" uid="uid://dyot5rpf5pe4n" path="res://Sprites/TreeFarmAnimation/TreeFarmEmpty/frame_3_delay-0.1s.png" id="4_6s7yi"]
+[ext_resource type="Texture2D" uid="uid://b8dqrnvqew2tm" path="res://Sprites/FisheryAnimation/frame_2_delay-0.1s.png" id="4_ax5db"]
+[ext_resource type="Texture2D" uid="uid://6utjyylsy84l" path="res://Sprites/TreeFarmAnimation/TreeFarmEmpty/frame_4_delay-0.1s.png" id="5_3nrxn"]
+[ext_resource type="Texture2D" uid="uid://b5a3bjh5ecdrj" path="res://Sprites/FisheryAnimation/frame_3_delay-0.1s.png" id="5_420dw"]
+[ext_resource type="Texture2D" uid="uid://b2ggv1gc6ujwe" path="res://Sprites/TreeFarmAnimation/TreeFarmEmpty/frame_5_delay-0.1s.png" id="6_b0s2h"]
+[ext_resource type="Texture2D" uid="uid://b32s2hdambe7i" path="res://Sprites/FisheryAnimation/frame_4_delay-0.1s.png" id="6_dxeo5"]
+[ext_resource type="Texture2D" uid="uid://brmr5xrkj0csq" path="res://Sprites/TreeFarmAnimation/TreeFarmSprouts/frame_0_delay-0.1s.png" id="7_08ddj"]
+[ext_resource type="Texture2D" uid="uid://4l7ijkelgvuw" path="res://Sprites/FisheryAnimation/frame_5_delay-0.1s.png" id="7_86xtq"]
+[ext_resource type="Texture2D" uid="uid://b6htvamamkva4" path="res://Sprites/TreeFarmAnimation/TreeFarmSprouts/frame_1_delay-0.1s.png" id="8_e04rh"]
+[ext_resource type="Texture2D" uid="uid://bbgciqotf26qm" path="res://Sprites/FisheryAnimation/frame_6_delay-0.1s.png" id="8_stj5h"]
+[ext_resource type="Texture2D" uid="uid://dd7lcvybtx3rn" path="res://Sprites/WellAnimation/frame_0_delay-0.1s.png" id="9_g6vw7"]
+[ext_resource type="Texture2D" uid="uid://bmpb7c0mucelb" path="res://Sprites/TreeFarmAnimation/TreeFarmSprouts/frame_2_delay-0.1s.png" id="9_h5yji"]
+[ext_resource type="Texture2D" uid="uid://bt2y2eu5jlh4e" path="res://Sprites/WellAnimation/frame_1_delay-0.1s.png" id="10_7y56j"]
+[ext_resource type="Texture2D" uid="uid://d1827xganetxt" path="res://Sprites/TreeFarmAnimation/TreeFarmSprouts/frame_3_delay-0.1s.png" id="10_r4ubd"]
+[ext_resource type="Texture2D" uid="uid://hu7a2ts8o86" path="res://Sprites/TreeFarmAnimation/TreeFarmSprouts/frame_4_delay-0.1s.png" id="11_8rxf1"]
+[ext_resource type="Texture2D" uid="uid://dub7cudx3pfg4" path="res://Sprites/WellAnimation/frame_2_delay-0.1s.png" id="11_o2sf0"]
+[ext_resource type="Texture2D" uid="uid://x4oevodd3f0g" path="res://Sprites/WellAnimation/frame_3_delay-0.1s.png" id="12_7mylp"]
+[ext_resource type="Texture2D" uid="uid://ccwc738saois1" path="res://Sprites/TreeFarmAnimation/TreeFarmSprouts/frame_5_delay-0.1s.png" id="12_xfakx"]
+[ext_resource type="Texture2D" uid="uid://clnb1cr0qurcl" path="res://Sprites/WellAnimation/frame_4_delay-0.1s.png" id="13_m5jd8"]
+[ext_resource type="Texture2D" uid="uid://hplo0pufe063" path="res://Sprites/WellAnimation/frame_5_delay-0.1s.png" id="14_c44ke"]
+[ext_resource type="Texture2D" uid="uid://c4w6x5lgj4l5" path="res://Sprites/WellAnimation/frame_6_delay-0.1s.png" id="15_bio1s"]
+[ext_resource type="Texture2D" uid="uid://dslvi5pnqhx45" path="res://Sprites/WellAnimation/frame_7_delay-0.1s.png" id="16_f1odm"]
+[ext_resource type="Texture2D" uid="uid://c47pu78pe01tl" path="res://Sprites/TreeFarmAnimation/TreeFarmGrown/frame_0_delay-0.1s.png" id="23_88im0"]
+[ext_resource type="Texture2D" uid="uid://varkvsypy63v" path="res://Sprites/TreeFarmAnimation/TreeFarmGrown/frame_1_delay-0.1s.png" id="24_x4os0"]
+[ext_resource type="Texture2D" uid="uid://lvq1cdqlk03m" path="res://Sprites/TreeFarmAnimation/TreeFarmGrown/frame_2_delay-0.1s.png" id="25_v1uc5"]
+[ext_resource type="Texture2D" uid="uid://cy02l1c0cr2ex" path="res://Sprites/TreeFarmAnimation/TreeFarmGrown/frame_3_delay-0.1s.png" id="26_alp47"]
+[ext_resource type="Texture2D" uid="uid://pc8pe6xujaty" path="res://Sprites/TreeFarmAnimation/TreeFarmGrown/frame_4_delay-0.1s.png" id="27_7p7qf"]
+[ext_resource type="Texture2D" uid="uid://ck0l3htgmtuaf" path="res://Sprites/TreeFarmAnimation/TreeFarmGrown/frame_5_delay-0.1s.png" id="28_5by8y"]
+[ext_resource type="AudioStream" uid="uid://cbhie0y0kh1iy" path="res://Resources/Materials/UPGRADE sound effect.mp3" id="35_xlc47"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2nere"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_84c1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iproh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ax5db")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_420dw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dxeo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_86xtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_stj5h")
+}],
+"loop": true,
+"name": &"Fishery_Day",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_g6vw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7y56j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o2sf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7mylp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_m5jd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_c44ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bio1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_f1odm")
+}],
+"loop": true,
+"name": &"Well_Day",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l3sh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_537uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_efupy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6s7yi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3nrxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b0s2h")
+}],
+"loop": true,
+"name": &"Wood_Building_Day_Empty",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_88im0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_x4os0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_v1uc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_alp47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7p7qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5by8y")
+}],
+"loop": true,
+"name": &"Wood_Building_Day_Grown",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_08ddj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e04rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h5yji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r4ubd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8rxf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xfakx")
+}],
+"loop": true,
+"name": &"Wood_Building_Day_Sprouts",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5wuc"]
+size = Vector2(383.333, 383.333)
+
+[node name="BuildingTracker" type="Node2D"]
+script = ExtResource("1_ng4ed")
+
+[node name="Building" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 96)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_2nere")
+animation = &"Wood_Building_Day_Empty"
+
+[node name="Area2D" type="Area2D" parent="Building"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Area2D"]
+position = Vector2(0.333344, 64.3333)
+shape = SubResource("RectangleShape2D_m5wuc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_xlc47")
+volume_db = -10.0

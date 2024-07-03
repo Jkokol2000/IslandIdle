@@ -18,27 +18,35 @@ layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
+offset_left = 13.0
+offset_top = 51.0
+offset_right = 13.0
+offset_bottom = 51.0
 grow_horizontal = 2
+scale = Vector2(3.90746, 3.28929)
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -80.5
-offset_right = 80.5
-offset_bottom = 27.0
+offset_left = -80.615
+offset_top = -14.2888
+offset_right = 80.385
+offset_bottom = 12.7112
 grow_horizontal = 2
-scale = Vector2(3, 3)
-pivot_offset = Vector2(85, 0)
+scale = Vector2(0.995815, 1.14005)
 
-[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_mmfmq")
 expand_mode = 3
 
-[node name="WoodLabel" type="Label" parent="Control/HBoxContainer"]
+[node name="WoodLabel" type="Label" parent="Control/PanelContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_e61fl")
@@ -46,12 +54,12 @@ theme_override_font_sizes/font_size = 26
 text = "10
 "
 
-[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="Control/PanelContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("6_ll3ro")
 expand_mode = 3
 
-[node name="FoodLabel" type="Label" parent="Control/HBoxContainer"]
+[node name="FoodLabel" type="Label" parent="Control/PanelContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_e61fl")
@@ -59,12 +67,12 @@ theme_override_font_sizes/font_size = 26
 text = "10
 "
 
-[node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="Control/PanelContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("7_ewk47")
 expand_mode = 3
 
-[node name="WaterLabel" type="Label" parent="Control/HBoxContainer"]
+[node name="WaterLabel" type="Label" parent="Control/PanelContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_e61fl")

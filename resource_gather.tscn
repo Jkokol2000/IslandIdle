@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbs3cy45tjss3"]
+[gd_scene load_steps=7 format=3 uid="uid://dbs3cy45tjss3"]
 
-[ext_resource type="Texture2D" uid="uid://vbwrtvdvwwkc" path="res://icon.svg" id="1_7cr3t"]
+[ext_resource type="Theme" uid="uid://bbs2sjb582emi" path="res://Sprites/button_theme.tres" id="1_fbowr"]
 [ext_resource type="Script" path="res://Scripts/WoodGather.gd" id="2_1jj52"]
 [ext_resource type="Resource" uid="uid://dh0g70vbch5gk" path="res://Resources/Materials/Wood.tres" id="3_ah7s2"]
 [ext_resource type="Script" path="res://Scripts/MaterialComponent.gd" id="4_556i7"]
+[ext_resource type="AudioStream" uid="uid://bv5btxcfjgi4b" path="res://Resources/Materials/Upgrade sound fx.mp3" id="6_4s5h4"]
 [ext_resource type="Script" path="res://Scripts/UpgradeLabel.gd" id="6_t1we8"]
 
 [node name="WoodGather" type="Button"]
@@ -11,8 +12,8 @@ offset_left = 1101.0
 offset_top = 157.0
 offset_right = 1237.0
 offset_bottom = 339.0
+theme = ExtResource("1_fbowr")
 text = "Gather Wood"
-icon = ExtResource("1_7cr3t")
 icon_alignment = 1
 vertical_icon_alignment = 0
 script = ExtResource("2_1jj52")
@@ -22,21 +23,12 @@ GatherMaterial = ExtResource("3_ah7s2")
 position = Vector2(-830, -22)
 script = ExtResource("4_556i7")
 timer = NodePath("../Timer")
-timeToIncrease = 10.0
+timeToIncrease = 30.0
 baseAmount = 1
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
-
-[node name="UpgradeButton" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 3.0
-offset_top = 217.0
-offset_right = 128.0
-offset_bottom = 248.0
-text = "Increase Speed"
 
 [node name="BuildingLabel" type="Label" parent="."]
 visible = false
@@ -48,7 +40,9 @@ offset_bottom = 282.0
 text = "Test"
 script = ExtResource("6_t1we8")
 
+[node name="UpgradeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4s5h4")
+volume_db = -10.0
+
 [connection signal="pressed" from="." to="." method="_on_pressed"]
-[connection signal="mouse_entered" from="UpgradeButton" to="BuildingLabel" method="_on_upgrade_button_mouse_entered"]
-[connection signal="mouse_exited" from="UpgradeButton" to="BuildingLabel" method="_on_upgrade_button_mouse_exited"]
-[connection signal="pressed" from="UpgradeButton" to="MaterialComponent" method="_on_upgrade_button_pressed"]
+[connection signal="upgrade_speed" from="." to="MaterialComponent" method="_on_wood_gather_upgrade_speed"]
